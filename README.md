@@ -8,6 +8,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ## Engine Goals
+
 - ASCII-only rendering (no color dependency)
 - Visual depth via glyph density
 - Turn-based update model
@@ -17,6 +18,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ## Engine Non-Goals
+
 - Real-time physics or timing
 - Game-specific logic
 - UI frameworks or menus
@@ -28,14 +30,14 @@ The demo scene is a separate program using this engine.
 ## ENGINE TODO
 
 ### Project Structure
-- [ ] Create `/engine` directory
+
+- [x] Create `/engine` directory
 - [ ] Define public headers (`engine/`)
-- [ ] Keep engine independent from demo logic
-- [ ] No hardcoded scene content in engine
 
 ---
 
 ### Core Types
+
 - [ ] `FrameBuffer` (glyph + light/intensity)
 - [ ] `GlyphRamp` (intensity → ASCII)
 - [ ] `Renderer`
@@ -45,6 +47,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ### FrameBuffer
+
 - [ ] Fixed-size 2D buffers
 - [ ] Light/intensity buffer (`uint8_t` or `float`)
 - [ ] Glyph buffer (`char`)
@@ -53,6 +56,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ### Glyph Ramp & Depth
+
 - [ ] Define default glyph ramp (dark → light)
 - [ ] Implement `intensity_to_glyph()`
 - [ ] Support custom ramps
@@ -61,6 +65,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ### Renderer
+
 - [ ] Clear framebuffer per frame
 - [ ] Draw primitives:
   - [ ] point
@@ -73,6 +78,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ### Animation System
+
 - [ ] `AnimationFrame` (per-frame light overrides + duration)
 - [ ] `Animation` (ordered frames)
 - [ ] Blocking animation playback
@@ -82,6 +88,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ### Turn-Based Model
+
 - [ ] Explicit `begin_turn()` / `end_turn()`
 - [ ] No internal real-time loop
 - [ ] All updates driven by caller
@@ -90,6 +97,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ### Input Handling (Minimal)
+
 - [ ] Raw key read (WASD)
 - [ ] Blocking input
 - [ ] Engine exposes input hooks, not logic
@@ -97,6 +105,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ### Cutscene Support
+
 - [ ] Cutscene = animation sequence
 - [ ] Same pipeline as normal rendering
 - [ ] No special-casing
@@ -105,6 +114,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ### Engine Constraints
+
 - [ ] ASCII only
 - [ ] No color dependency
 - [ ] No scene knowledge
@@ -115,6 +125,7 @@ The demo scene is a separate program using this engine.
 ## DEMO TODO (SEPARATE)
 
 ### Project Setup
+
 - [ ] Create `/demo` directory
 - [ ] Link against engine
 - [ ] Define fixed screen size
@@ -123,6 +134,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ### Demo Scene
+
 - [ ] Hardcoded map
 - [ ] Player start position
 - [ ] Exit tile
@@ -132,6 +144,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ### Demo Logic
+
 - [ ] WASD movement
 - [ ] Turn counter
 - [ ] Trigger animations per turn
@@ -140,6 +153,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ### Demo Cutscenes
+
 - [ ] Start cutscene using engine animations
 - [ ] End cutscene using engine animations
 - [ ] Lock input during playback
@@ -147,6 +161,7 @@ The demo scene is a separate program using this engine.
 ---
 
 ### Demo Constraints
+
 - [ ] One scene only
 - [ ] No extra systems
 - [ ] Visual-first, not mechanic-first
@@ -156,12 +171,14 @@ The demo scene is a separate program using this engine.
 ## Completion Criteria
 
 ### Engine
+
 - Rendering produces visible depth without color
 - Animations and cutscenes share the same pipeline
 - Turn-based model is enforced
 - Engine usable without demo
 
 ### Demo
+
 - Clearly showcases engine capabilities
 - Turn-based input feels deliberate
 - Animations enhance atmosphere
